@@ -1,0 +1,8 @@
+create database springsecurity; 
+
+use springsecurity; 
+
+create table users(username varchar(50) primary key, password varchar(120) not null, enabled tinyint(1) not null);
+
+
+create table authorities(username varchar(50) not null, authority varchar(50) not null, constraint auth_key foreign key(username) references users(username));
